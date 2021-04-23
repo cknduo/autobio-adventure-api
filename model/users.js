@@ -1,15 +1,8 @@
 const db = require('./db')
 
-function createUser({ name, progress }) {
-    if (!progress) {
-        progress = ''
-    }
-
+function createUser({ name }) {
     return db.getCollection('users').then((user) => {
-        return user.insertOne({
-            name,
-            progress
-        })
+        return user.insertOne({name: name})
     })
 }
 
@@ -17,19 +10,19 @@ function updateUser({ name, progress }) {
     return db.getCollection('users').then((user) => {
         return user.updateOne(
             {name: name},
-            { $set: {progress: progress}}
+            {$set: {progress: progress}}
         )
     })
 }
 
-function findUser({ name }) {
+function findUserByName(userName) {
     return db.getCollection('users').then((users) => {
-        return users.find({ name: name })
+        return users.findOne({name: userName})
     })
 }
 
 module.exports = {
     createUser,
-    findUser,
-    updateUser
+    updateUser,
+    findUserByName
 }

@@ -15,7 +15,7 @@ function createScene(name, description, options) {
 
 function findSceneByName(sceneName) {
     return db.getCollection('scenes').then((scenes) => {
-        return scenes.findOne({ name: sceneName })
+        return scenes.findOne({name: sceneName})
     })
 }
 

@@ -10,7 +10,7 @@ router.get('/:sceneName', async (req, res) => {
         let scene = await scenes.findSceneByName(sceneName)
         res.send(scene)
     }
-    catch (error) {
+    catch(error) {
         console.log(error)
         res.status(404).send(`Scene ${sceneName} not found.`)
     }
