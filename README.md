@@ -8,13 +8,15 @@ Getting started:
 ```
 create a new MongoDB database called 'adventure'
 
-in server.js      uncomment  // require('./model/adventure') to load the scenes into the database
-                  then comment this out again to prevent duplicating all the scenes this collection
+in server.js:      
+  uncomment  // require('./model/adventure') to load the scenes into the database
+  then comment this out again to prevent duplicating all the scenes this collection
 
 npm install
 npm start
 
 play the game
 
-once you add a player, the 'users' collection is auto created in the database, run db.getCollection('users').createIndex({"name:"text"},{unique:true}) in Robo3T
+once you add a player, the 'users' collection is auto created in the database
+in Robo3T, run db.getCollection('users').createIndex({"name:"text"},{unique:true})
 this prevents player duplicates in your database
