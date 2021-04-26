@@ -10,7 +10,7 @@ create a new MongoDB database called 'adventure'
 
 in server.js:      
   uncomment  // require('./model/adventure') to load the scenes into the database
-  then comment this out again to prevent duplicating all the scenes this collection
+  then comment this out again to prevent duplicating all the scenes in the collection
 
 npm install
 npm start
